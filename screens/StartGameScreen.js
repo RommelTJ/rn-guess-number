@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
     width: 300,
     maxWidth: "80%",
     alignItems: "center",
-    shadowColor: "black",
-    shadowOffset: {
+    shadowColor: "black", // only works on iOS
+    shadowOffset: { // only works on iOS
       width: 0,
       height: 2
     },
-    shadowOpacity: 0.26,
-    shadowRadius: 6,
+    shadowOpacity: 0.26, // only works on iOS
+    shadowRadius: 6, // only works on iOS
     backgroundColor: "white",
-    elevation: 5
+    elevation: 5 // only works on Android
   },
   title: {
     fontSize: 20,
