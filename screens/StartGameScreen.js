@@ -41,7 +41,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.26, // only works on iOS
     shadowRadius: 6, // only works on iOS
     backgroundColor: "white",
-    elevation: 5 // only works on Android
+    elevation: 5, // only works on Android
+    padding: 20,
+    borderRadius: 10
   },
   title: {
     fontSize: 20,
