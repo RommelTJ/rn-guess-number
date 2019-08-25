@@ -32,7 +32,15 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: 300,
     maxWidth: "80%",
-    alignItems: "center"
+    alignItems: "center",
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.26,
+    shadowRadius: 6,
+    backgroundColor: "white"
   },
   title: {
     fontSize: 20,
