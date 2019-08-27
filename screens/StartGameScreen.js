@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
     width: 100
   },
   input: {
-    width: 50
+    width: 50,
+    textAlign: "center"
   }
 });
 
