@@ -7,6 +7,8 @@ import Input from "../components/Input";
 const StartGameScreen = (props) => {
 
   const [enteredValue, setEnteredValue] = useState('');
+  const [confirmed, setConfirmed] = useState(false);
+  const [selectedNumber, setSelectedNumber] = useState(undefined);
 
   const numberInputHandler = (inputText) => {
     setEnteredValue(inputText.replace(/[^0-9]/g, ""));
@@ -14,6 +16,16 @@ const StartGameScreen = (props) => {
 
   const resetInputHandler = () => {
     setEnteredValue("");
+    setConfirmed(false);
+  };
+
+  const confirmInputHandler = () => {
+    const chosenNumber = parseInt(enteredValue);
+    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) return undefined;
+
+    setConfirmed(true);
+    setSelectedNumber(parseInt(enteredValue)); // this is fine because React will batch these.
+    setEnteredValue('');
   };
 
   return (
@@ -37,7 +49,7 @@ const StartGameScreen = (props) => {
               <Button title="Reset" onPress={resetInputHandler} color={Colors.accent}/>
             </View>
             <View style={styles.button}>
-              <Button title="Confirm" onPress={() => {}} color={Colors.primary}/>
+              <Button title="Confirm" onPress={confirmInputHandler} color={Colors.primary}/>
             </View>
           </View>
         </Card>
