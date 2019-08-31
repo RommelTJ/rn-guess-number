@@ -22,13 +22,15 @@ const GameScreen = (props) => {
   const currentLow = useRef(1);
   const currentHigh = useRef(100);
 
+  const {userChoice, onGameOver} = props;
+
   // Allows side-effects or allows logic after every render cycle
   // Checking win condition
   useEffect(() => {
-    if (currentGuess === props.userChoice) {
-      props.onGameOver(rounds);
+    if (currentGuess === userChoice) {
+      onGameOver(rounds);
     }
-  });
+  }, [currentGuess, userChoice, onGameOver]);
 
   const nextGuessHandler = (direction) => {
     if (
