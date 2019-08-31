@@ -30,6 +30,7 @@ const StartGameScreen = (props) => {
     setConfirmed(true);
     setSelectedNumber(parseInt(enteredValue)); // this is fine because React will batch these.
     setEnteredValue('');
+    Keyboard.dismiss();
   };
 
   let confirmedOutput;
