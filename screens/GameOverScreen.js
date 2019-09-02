@@ -52,10 +52,12 @@ const styles = StyleSheet.create({
     fontFamily: 'open-sans-bold'
   },
   resultContainer: {
-    marginHorizontal: 30
+    marginHorizontal: 30,
+    marginVertical: 15
   },
   resultText: {
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 20
   }
 });
 
