@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     borderRadius: 200,
     borderWidth: 3,
     borderColor: 'black',
-    width: '80%'
+    width: '80%',
+    overflow: 'hidden'
   }
 });
 
