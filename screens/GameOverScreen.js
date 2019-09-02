@@ -10,9 +10,9 @@ const GameOverScreen = (props) => {
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          // source={require('../assets/success.png')}
-          fadeDuration={1000}
-          source={{uri: 'http://www.alanarnette.com/images/mteverest/looking-back-at-the-south-summit-of-everest.jpg'}}
+          source={require('../assets/success.png')}
+          // fadeDuration={1000}
+          // source={{uri: 'http://www.alanarnette.com/images/mteverest/looking-back-at-the-south-summit-of-everest.jpg'}}
           resizeMode="cover"
         />
       </View>
