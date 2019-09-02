@@ -7,7 +7,7 @@ const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
       <TitleText>Game Over!</TitleText>
-      <Image style={styles.image} source={require('../assets/success.png')} />
+      <Image style={styles.image} source={require('../assets/success.png')} resizeMode="cover" />
       <BodyText>Number of rounds: {props.roundsNumber}</BodyText>
       <BodyText>Number was: {props.userNumber}</BodyText>
       <Button title="NEW GAME" onPress={props.onRestart} />
