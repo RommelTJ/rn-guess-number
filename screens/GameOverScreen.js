@@ -16,7 +16,9 @@ const GameOverScreen = (props) => {
           resizeMode="cover"
         />
       </View>
-      <BodyText>Your phone needed {props.roundsNumber} rounds to guess the number {props.userNumber}.</BodyText>
+      <BodyText>
+        Your phone needed <Text>{props.roundsNumber}</Text> rounds to guess the number <Text>{props.userNumber}</Text>.
+      </BodyText>
       <Button title="NEW GAME" onPress={props.onRestart} />
     </View>
   );
