@@ -8,7 +8,12 @@ const GameOverScreen = (props) => {
     <View style={styles.screen}>
       <TitleText>Game Over!</TitleText>
       <View style={styles.imageContainer}>
-        <Image style={styles.image} source={require('../assets/success.png')} resizeMode="cover" />
+        <Image
+          style={styles.image}
+          // source={require('../assets/success.png')}
+          source={{uri: 'http://www.alanarnette.com/images/mteverest/looking-back-at-the-south-summit-of-everest.jpg'}}
+          resizeMode="cover"
+        />
       </View>
       <BodyText>Number of rounds: {props.roundsNumber}</BodyText>
       <BodyText>Number was: {props.userNumber}</BodyText>
