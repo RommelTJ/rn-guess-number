@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
     height: 300
   },
   imageContainer: {
-    borderRadius: 200,
+    borderRadius: 150,
     borderWidth: 3,
     borderColor: 'black',
-    width: '80%',
+    width: 300,
+    height: 300,
     overflow: 'hidden',
     marginVertical: 30
   }
