@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: 'black',
     width: '80%',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    marginVertical: 30
   }
 });
 
