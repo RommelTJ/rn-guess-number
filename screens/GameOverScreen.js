@@ -18,7 +18,7 @@ const GameOverScreen = (props) => {
         />
       </View>
       <View style={styles.resultContainer}>
-        <BodyText>
+        <BodyText style={styles.resultText}>
           Your phone needed <Text style={styles.highlight}>{props.roundsNumber}</Text> rounds to guess the number
           <Text style={styles.highlight}> {props.userNumber}</Text>.
         </BodyText>
@@ -53,6 +53,9 @@ const styles = StyleSheet.create({
   },
   resultContainer: {
     marginHorizontal: 30
+  },
+  resultText: {
+    textAlign: 'center'
   }
 });
 
