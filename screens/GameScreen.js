@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {View, Text, StyleSheet, Button, Alert} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Alert} from 'react-native';
 import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card";
 import DefaultStyles from '../constants/default-styles';
@@ -48,7 +48,7 @@ const GameScreen = (props) => {
     if (direction === 'lower') {
       currentHigh.current = currentGuess;
     } else {
-      currentLow.current = currentGuess;
+      currentLow.current = currentGuess + 1;
     }
     const nextNumber = generateRandomBetween(currentLow.current, currentHigh.current, currentGuess);
     setCurrentGuess(nextNumber);
@@ -67,6 +67,17 @@ const GameScreen = (props) => {
           <Ionicons name="md-add" size={24} color="white" />
         </MainButton>
       </Card>
+      <ScrollView>
+        {
+          pastGuesses.map(pastGuess => {
+            return (
+              <View key={pastGuess}>
+                <Text>{pastGuess}</Text>
+              </View>
+            );
+          })
+        }
+      </ScrollView>
     </View>
   );
 };
