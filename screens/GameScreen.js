@@ -32,7 +32,7 @@ const GameScreen = (props) => {
   // Checking win condition
   useEffect(() => {
     if (currentGuess === userChoice) {
-      onGameOver(rounds);
+      onGameOver(pastGuesses.length);
     }
   }, [currentGuess, userChoice, onGameOver]);
 
