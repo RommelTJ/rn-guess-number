@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   list: {
+    flex: 1, // need flex 1 for the scrolling to work on android
     width: '80%'
   }
 });
