@@ -79,7 +79,7 @@ const GameScreen = (props) => {
       </Card>
       <View style={styles.list}>
         <ScrollView>
-          {pastGuesses.map((pastGuess, idx) => renderListItem(pastGuess, idx + 1))}
+          {pastGuesses.map((pastGuess, idx) => renderListItem(pastGuess, pastGuesses.length - idx))}
         </ScrollView>
       </View>
     </View>
