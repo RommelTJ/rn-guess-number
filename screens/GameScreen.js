@@ -17,6 +17,14 @@ const generateRandomBetween = (min, max, exclude) => {
   }
 };
 
+const renderListItem = (value) => {
+  return (
+    <View key={value}>
+      <Text>{value}</Text>
+    </View>
+  );
+};
+
 const GameScreen = (props) => {
   const initialGuess = generateRandomBetween(1, 100, props.userChoice);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
@@ -68,15 +76,7 @@ const GameScreen = (props) => {
         </MainButton>
       </Card>
       <ScrollView>
-        {
-          pastGuesses.map(pastGuess => {
-            return (
-              <View key={pastGuess}>
-                <Text>{pastGuess}</Text>
-              </View>
-            );
-          })
-        }
+        {pastGuesses.map(pastGuess => renderListItem(pastGuess))}
       </ScrollView>
     </View>
   );
