@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     backgroundColor: 'white',
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-between'
   },
   list: {
     width: '80%'
