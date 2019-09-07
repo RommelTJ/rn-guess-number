@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     width: '80%'
   },
   list: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'flex-end'
   }
