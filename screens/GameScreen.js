@@ -85,6 +85,7 @@ const GameScreen = (props) => {
           keyExtractor={(item) => item}
           data={pastGuesses}
           renderItem={renderListItem.bind(this, pastGuesses.length)}
+          contentContainerStyle={styles.list}
         />
       </View>
     </View>
