@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15
   },
   inputContainer: {
-    width: 300,
-    maxWidth: "80%",
+    width: '90%',
+    minWidth: 300,
     alignItems: "center"
   },
   title: {
