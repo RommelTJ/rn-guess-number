@@ -65,6 +65,8 @@ const GameScreen = (props) => {
     setPastGuesses(currentPastGuesses => [nextNumber.toString(), ...currentPastGuesses]);
   };
 
+  const listContainerStyle = Dimensions.get('window').width > 350 ? styles.listContainer : styles.listContainerBig;
+
   return (
     <View style={styles.screen}>
       <Text style={DefaultStyles.title}>Opponent's guess</Text>
@@ -77,7 +79,7 @@ const GameScreen = (props) => {
           <Ionicons name="md-add" size={24} color="white" />
         </MainButton>
       </Card>
-      <View style={styles.listContainer}>
+      <View style={listContainerStyle}>
         <FlatList
           keyExtractor={(item) => item}
           data={pastGuesses}
@@ -114,7 +116,11 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 1, // need flex 1 for the scrolling to work on android
-    width: Dimensions.get('window').width > 350 ? '60%' : '80%'
+    width: '60%'
+  },
+  listContainerBig: {
+    flex: 1,
+    width: '80%'
   },
   list: {
     flexGrow: 1,
