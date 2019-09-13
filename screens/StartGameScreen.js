@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -26,11 +26,6 @@ const StartGameScreen = (props) => {
   const [selectedNumber, setSelectedNumber] = useState(undefined);
   const [buttonWidth, setButtonWidth] = useState(Dimensions.get('window').width / 4);
 
-  const updateLayout = () => {
-    setButtonWidth(Dimensions.get('window').width / 4);
-  };
-  Dimensions.addEventListener('change', updateLayout);
-
   const numberInputHandler = (inputText) => {
     setEnteredValue(inputText.replace(/[^0-9]/g, ""));
   };
@@ -39,6 +34,19 @@ const StartGameScreen = (props) => {
     setEnteredValue("");
     setConfirmed(false);
   };
+
+  // useEffect runs whenever the component re-renders.
+  useEffect(() => {
+    const updateLayout = () => {
+      setButtonWidth(Dimensions.get('window').width / 4);
+    };
+    Dimensions.addEventListener('change', updateLayout);
+
+    // cleanup function runs right before useEffect runs.
+    return () => {
+      Dimensions.removeEventListener('change', updateLayout);
+    };
+  });
 
   const confirmInputHandler = () => {
     const chosenNumber = parseInt(enteredValue);
