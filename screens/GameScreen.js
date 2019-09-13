@@ -31,12 +31,28 @@ const GameScreen = (props) => {
   const initialGuess = generateRandomBetween(1, 100, props.userChoice);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const [pastGuesses, setPastGuesses] = useState([initialGuess.toString()]);
+  const [availableDeviceWidth, setAvailableDeviceWidth] = useState(Dimensions.get('window').width);
+  const [availableDeviceHeight, setAvailableDeviceHeight] = useState(Dimensions.get('window').height);
 
   // useRef allows use to persist value between re-renders.
   const currentLow = useRef(1);
   const currentHigh = useRef(100);
 
   const {userChoice, onGameOver} = props;
+
+  // useEffect runs whenever the component re-renders.
+  useEffect(() => {
+    const updateLayout = () => {
+      setAvailableDeviceWidth(Dimensions.get('window').width);
+      setAvailableDeviceHeight(Dimensions.get('window').height);
+    };
+    Dimensions.addEventListener('change', updateLayout);
+
+    // cleanup function runs right before useEffect runs.
+    return () => {
+      Dimensions.removeEventListener('change', updateLayout);
+    };
+  });
 
   // Allows side-effects or allows logic after every render cycle
   // Checking win condition
@@ -65,9 +81,9 @@ const GameScreen = (props) => {
     setPastGuesses(currentPastGuesses => [nextNumber.toString(), ...currentPastGuesses]);
   };
 
-  const listContainerStyle = Dimensions.get('window').width > 350 ? styles.listContainer : styles.listContainerBig;
+  const listContainerStyle = availableDeviceWidth > 350 ? styles.listContainer : styles.listContainerBig;
 
-  if (Dimensions.get('window').height < 500) {
+  if (availableDeviceHeight < 500) {
     return (
       <View style={styles.screen}>
         <Text style={DefaultStyles.title}>Opponent's guess</Text>
