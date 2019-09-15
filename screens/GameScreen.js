@@ -31,7 +31,11 @@ const renderListItem = (listLength, itemData) => {
 const GameScreen = (props) => {
 
   // Locking orientation.
-  ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+  // ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+
+  // Getting the current orientation.
+  // ScreenOrientation.getOrientationAsync()
+  // ScreenOrientation.addOrientationChangeListener()
 
   const initialGuess = generateRandomBetween(1, 100, props.userChoice);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
